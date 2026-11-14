@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OFOQ | أفق</title>
+        <link rel="stylesheet" href="style.css">
+           <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3"></script>
+           </head>
+           <body>
+            <header class="navabar">
+                <div class="brand">
+                     <div class="logo">أ</div>
+                     </div>
+                        <h1>OFOQ <span>أفق</span></h1>
+                        <p>مساعد بصري ذكي</p>
+                    </div>
+                </div>
+                <div class="header-status">
+                     <span class="status-dot"></span>
+        <span id="headerStatus">جاهز للبدء</span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div>
+            <span class="eyebrow">VISION ASSISTANT</span>
+            <h2>العالم أقرب<br>مما تتخيل.</h2>
+            <p>أفق يساعدك على فهم الأشياء المحيطة بك باستخدام الكاميرا والصوت.</p>
+        </div>
+
+        <div class="hero-mark">O.</div>
+    </section>
+
+    <section class="dashboard">
+
+        <div class="camera-card">
+
+            <div class="card-header">
+                <h3>المشهد المباشر</h3>
+                <span id="cameraStatus">متوقف</span>
+            </div>
+
+            <div class="camera-area">
+
+                <video id="camera" autoplay muted playsinline></video>
+
+                <canvas id="canvas"></canvas>
+
+                <div class="camera-placeholder" id="placeholder">
+                    <div class="camera-icon">◉</div>
+                    <h3>الكاميرا في انتظارك</h3>
+                    <p>اضغط على زر بدء المساعدة</p>
+                </div>
+
+                <div class="scan-line"></div>
+
+            </div>
+
+            <div class="camera-footer">
+                <span>OFOQ VISION SYSTEM</span>
+                <span id="analysisStatus">التحليل متوقف</span>
+            </div>
+
+        </div>
+
+        <aside class="sidebar">
+
+            <div class="status-card">
+                <span class="status-label">حالة النظام</span>
+                <h3 id="systemStatus">المساعدة متوقفة</h3>
+                <p id="systemDescription">ابدأ تشغيل الكاميرا للبدء.</p>
+            </div>
+
+            <div class="info-card">
+                <span class="status-label">آخر وصف صوتي</span>
+                <h3 id="lastSpeech">لا يوجد وصف بعد</h3>
+            </div>
+
+            <div class="info-card">
+                <span class="status-label">الأشياء المكتشفة</span>
+                <h3 id="objectCount">0</h3>
+            </div>
+
+            <div class="objects-card">
+                <div class="objects-header">
+                    <h3>المشهد المحيط</h3>
+                    <span>LIVE</span>
+                </div>
+
+                <div id="objectsList">
+                    <p class="empty">لم يتم اكتشاف شيء</p>
+                </div>
+            </div>
+
+        </aside>
+
+    </section>
+
+    <section class="controls">
+
+        <button id="startBtn" class="btn-start">
+            ▶ ابدأ المساعدة
+        </button>
+
+        <button id="muteBtn" class="btn-secondary" disabled>
+            🔊 كتم الصوت
+        </button>
+
+        <button id="stopBtn" class="btn-stop" disabled>
+            ■ إيقاف
+        </button>
+
+    </section>
+
+    <section class="settings">
+
+        <div>
+            <label for="speechSpeed">سرعة الكلام</label>
+
+            <select id="speechSpeed">
+                <option value="0.8">بطيء</option>
+                <option value="1" selected>طبيعي</option>
+                <option value="1.2">سريع</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="confidence">دقة الاكتشاف</label>
+
+            <select id="confidence">
+                <option value="0.35">اكتشاف أكثر</option>
+                <option value="0.5" selected>متوازن</option>
+                <option value="0.7">دقة أعلى</option>
+            </select>
+        </div>
+
+    </section>
+
+    <div class="warning">
+        ⚠️ أفق مشروع تجريبي ولا يضمن اكتشاف جميع العوائق أو قياس المسافات.
+        لا تعتمد عليه وحده أثناء المشي أو عبور الطريق.
+    </div>
+
+</main>
+
+<footer>
+    <span>OFOQ — أفق</span>
+    <span>Technology for everyone.</span>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+                      
+
+
+
+
+
+        
